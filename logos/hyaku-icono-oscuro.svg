@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="346.5 200 560 560" width="560" height="560" role="img" aria-label="Hyaku">
+<title>Hyaku</title>
+<defs><mask id="cutc" maskUnits="userSpaceOnUse" x="300" y="200" width="650" height="560"><rect x="300" y="200" width="650" height="560" fill="#fff"/><path d="M440 433 C620 433 640 531 833 531" fill="none" stroke="#000" stroke-width="58" stroke-linecap="round"/><circle cx="430" cy="433" r="56" fill="#000"/><circle cx="833" cy="531" r="46" fill="#000"/></mask></defs>
+<g mask="url(#cutc)"><rect x="355" y="265" width="153" height="430" rx="30" fill="#F1F4EF"/><rect x="746" y="265" width="153" height="430" rx="30" fill="#FC6A44"/></g>
+<path d="M440 433 C620 433 640 531 833 531" fill="none" stroke="#FC6A44" stroke-width="30"/>
+<circle cx="430" cy="433" r="33" fill="#F1F4EF"/><circle cx="833" cy="531" r="28" fill="#FC6A44"/>
+</svg>
