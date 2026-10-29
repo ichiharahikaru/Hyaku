@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Romero Café · Propuesta de diseño</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;700&family=Playfair+Display:ital,wght@1,600;1,700&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#F2E9D8;--card:#F8F2E6;--green:#146B3F;--green2:#1A8C4E;--gold:#D4AA0E;--tan:#E4BC80;--sage:#C3C9B4;--ink:#1E1914;--muted:#5C5448}
+*{box-sizing:border-box}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:'Montserrat',sans-serif;font-size:16px;line-height:1.6}
+a{color:var(--green)}
+img{display:block;max-width:100%}
+.wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 24px}
+.banner{background:#1F2835;color:#E8EBEF;font-size:14px}
+.banner .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px 18px;padding-top:10px;padding-bottom:10px;text-align:center}
+.banner img{height:26px;width:auto}
+.nav{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 24px;padding:14px 0}
+.nav img.logo{height:64px;width:auto}
+.links{display:flex;flex-wrap:wrap;align-items:center;gap:8px 26px;font-weight:500;font-size:15px}
+.links a{color:var(--ink);text-decoration:none}
+.btn{display:inline-block;text-decoration:none;font-weight:700;font-size:15px;padding:13px 26px;border-radius:999px;border:2px solid var(--green);background:var(--green);color:#FBF6EA}
+.btn.alt{background:transparent;color:var(--green)}
+.btn:hover{background:#0F5230;border-color:#0F5230;color:#FBF6EA}
+.hero{display:flex;flex-wrap:wrap;align-items:center;gap:40px;padding:36px 0 72px}
+.hero .txt{flex:1 1 420px;min-width:0}
+.eyebrow{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:2px;color:var(--green)}
+h1{margin:6px 0 16px;font-family:'Playfair Display',serif;font-style:italic;font-weight:700;font-size:clamp(46px,7.5vw,88px);line-height:1;letter-spacing:-1px;color:var(--ink)}
+.lead{margin:0 0 28px;font-size:19px;color:var(--muted);max-width:460px}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.mosaic{flex:1 1 380px;min-width:0;display:grid;grid-template-columns:1.1fr 1fr;grid-template-rows:1fr 1fr;gap:14px;height:460px}
+.mosaic div{border-radius:22px;overflow:hidden;background:var(--sage)}
+.mosaic div:first-child{grid-row:1 / span 2}
+.mosaic img{width:100%;height:100%;object-fit:cover}
+h2{margin:0 0 8px;font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:clamp(38px,5vw,56px);line-height:1;letter-spacing:1px;color:var(--green)}
+.sub{margin:0 0 32px;color:var(--muted);max-width:640px}
+section{padding:0 0 76px}
+.cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.card{background:var(--card);border:1px solid #E2D6BC;border-top:5px solid var(--gold);border-radius:20px;padding:22px}
+.card h3{margin:0 0 6px;font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:28px;letter-spacing:1px;color:var(--green)}
+.card p{margin:0;font-size:15px;color:var(--muted)}
+.card .ph{height:150px;border-radius:14px;overflow:hidden;margin:-4px 0 14px}
+.card .ph img{width:100%;height:100%;object-fit:cover}
+.menu{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.cat{background:var(--card);border:1px solid #E2D6BC;border-radius:20px;padding:24px 24px 18px;border-top:6px solid var(--green2)}
+.cat.sage{background:var(--sage);border-color:#B3BAA2;border-top-color:var(--gold)}
+.cat h3{margin:0 0 10px;font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:32px;letter-spacing:1px;color:var(--green)}
+.cat h4{margin:16px 0 6px;font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:22px;letter-spacing:1px;color:var(--green)}
+.row{display:flex;align-items:baseline;gap:8px;padding:5px 0;font-size:15px}
+.row span{flex:0 1 auto}
+.row i{flex:1 1 auto;border-bottom:1px dotted #A89C80;transform:translateY(-3px);min-width:12px}
+.row b{flex:0 0 auto;font-weight:700}
+.note{margin:-3px 0 4px;font-size:12.5px;color:var(--muted);font-style:italic}
+.tip{margin:22px 0 0;font-family:'Playfair Display',serif;font-style:italic;font-weight:600;font-size:20px;color:var(--green)}
+.gal{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.gal div{border-radius:18px;overflow:hidden;aspect-ratio:3/4;background:var(--sage)}
+.gal img{width:100%;height:100%;object-fit:cover}
+.visit{display:flex;flex-wrap:wrap;gap:24px;align-items:stretch}
+.visit .box{flex:1 1 420px;min-width:0;background:var(--sage);border-radius:24px;padding:36px;display:flex;flex-direction:column;justify-content:center}
+.visit .big{font-family:'Bebas Neue',sans-serif;font-size:clamp(34px,5vw,54px);line-height:1;letter-spacing:1px;color:var(--ink);margin:8px 0 14px}
+.visit p{margin:0 0 6px}
+.visit .btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+.visit .side{flex:1 1 320px;min-width:0;border-radius:24px;overflow:hidden;min-height:260px;max-height:360px}
+.visit .side img{width:100%;height:100%;object-fit:cover}
+footer{background:#1E1914;color:#CFC6B4;font-size:14px}
+footer .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px;padding-top:26px;padding-bottom:30px}
+footer img{height:30px;width:auto}
+@media (max-width:980px){.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.menu{grid-template-columns:repeat(2,minmax(0,1fr))}.gal{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:640px){.cards,.menu{grid-template-columns:minmax(0,1fr)}.mosaic{height:380px}.hero{padding-bottom:52px}}
+.wm{position:fixed;inset:0;z-index:100;pointer-events:none;background-image:url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='380' height='260'%3E%3Ctext x='24' y='150' transform='rotate(-24 190 130)' font-family='Montserrat,Arial,sans-serif' font-size='26' font-weight='700' letter-spacing='3' fill='%231F2835' fill-opacity='0.13'%3EHYAKU %C2%B7 DEMO%3C/text%3E%3C/svg%3E")}
+</style>
+</head>
+<body>
+<div class="wm" aria-hidden="true"></div>
+
+<div class="banner"><div class="wrap">
+<img src="img/hyaku-horizontal-oscuro.svg" alt="Hyaku">
+<span><strong>Propuesta de diseño</strong> · Borrador preparado por Hyaku. No es el sitio oficial de Romero Café.</span>
+</div></div>
+
+<div class="wrap">
+<div class="nav">
+<a href="#inicio"><img class="logo" src="img/logo.png" alt="Romero Café"></a>
+<div class="links">
+<a href="#carta">Carta</a>
+<a href="#nosotros">Nosotros</a>
+<a href="#galeria">Galería</a>
+<a href="#visitanos">Visitanos</a>
+<a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Romero+Caf%C3%A9+Av.+Boyac%C3%A1+600" target="_blank" rel="noopener">Cómo llegar</a>
+</div>
+</div>
+
+<div class="hero" id="inicio">
+<div class="txt">
+<div class="eyebrow">CAFETERÍA · AV. BOYACÁ 600</div>
+<h1>Tu pausa, nuestro café.</h1>
+<p class="lead">Hay lugares para pasar, y lugares para quedarse.</p>
+<div class="cta">
+<a class="btn" href="#carta">Ver la carta</a>
+<a class="btn alt" href="https://www.instagram.com/romerocafe_/" target="_blank" rel="noopener">Seguinos en Instagram</a>
+</div>
+</div>
+<div class="mosaic">
+<div><img src="img/latte-vertido.jpg" alt="Barista vertiendo leche en un latte"></div>
+<div><img src="img/frente-sillas.jpg" alt="Frente de Romero Café con sillas de mimbre"></div>
+<div><img src="img/vitrina.jpg" alt="Vitrina con cookies y pastelería"></div>
+</div>
+</div>
+
+<section id="nosotros">
+<h2>Nosotros</h2>
+<p class="sub">Todo lo que tenés que saber antes de venir.</p>
+<div class="cards">
+<div class="card"><h3>Take away</h3><p>Llevate tu café a donde vayas.</p></div>
+<div class="card"><h3>Pet friendly</h3><p>Tu compañero también es bienvenido.</p></div>
+<div class="card"><h3>Club Romero</h3><p>Nuestro plan de fidelidad para quienes nos eligen seguido.</p></div>
+<div class="card"><h3>Sin TACC y kosher</h3><p>Consultá la variedad disponible.</p></div>
+</div>
+</section>
+
+<section id="carta">
+<h2>La carta</h2>
+<p class="sub">Valores tomados de la carta de la sucursal Boyacá 600.</p>
+<div class="menu">
+
+<div class="cat">
+<h3>Cafés</h3>
+<div class="row"><span>Espresso</span><i></i><b>$3.600</b></div>
+<div class="row"><span>Ristretto</span><i></i><b>$3.700</b></div>
+<div class="row"><span>Americano</span><i></i><b>$3.800</b></div>
+<div class="row"><span>Espresso lungo</span><i></i><b>$3.800</b></div>
+<div class="row"><span>Doppio</span><i></i><b>$4.500</b></div>
+<div class="row"><span>Long black</span><i></i><b>$4.800</b></div>
+<h4>Adicionales</h4>
+<div class="row"><span>Leche de almendras</span><i></i><b>$1.000</b></div>
+<div class="row"><span>Tazón</span><i></i><b>$1.700</b></div>
+<div class="row"><span>Esencia</span><i></i><b>$1.000</b></div>
+</div>
+
+<div class="cat">
+<h3>Con leche</h3>
+<div class="row"><span>Macchiato</span><i></i><b>$3.600</b></div>
+<div class="row"><span>Magic</span><i></i><b>$5.000</b></div>
+<div class="row"><span>Cortado jarrito</span><i></i><b>$4.500</b></div>
+<div class="row"><span>Cortado chico</span><i></i><b>$3.900</b></div>
+<div class="row"><span>Capuccino 150 ml</span><i></i><b>$4.700</b></div>
+<div class="row"><span>Capuccino doble</span><i></i><b>$5.300</b></div>
+<div class="row"><span>Capuccino italiano</span><i></i><b>$6.500</b></div>
+<div class="note">Con crema, chocolate y canela</div>
+<div class="row"><span>Latte</span><i></i><b>$5.000</b></div>
+<div class="row"><span>Flat white</span><i></i><b>$5.600</b></div>
+<div class="note">Doble espresso + leche</div>
+<div class="row"><span>Lágrima</span><i></i><b>$4.500</b></div>
+<div class="row"><span>Lágrima doble</span><i></i><b>$5.000</b></div>
+<div class="row"><span>Matcha latte</span><i></i><b>$6.000</b></div>
+</div>
+
+<div class="cat">
+<h3>Cafés fríos</h3>
+<div class="row"><span>Café tonic</span><i></i><b>$6.500</b></div>
+<div class="row"><span>Iced latte</span><i></i><b>$5.500</b></div>
+<div class="row"><span>Iced flat</span><i></i><b>$6.000</b></div>
+<div class="row"><span>Cold brew</span><i></i><b>$5.500</b></div>
+<div class="row"><span>Cold brew estival</span><i></i><b>$6.000</b></div>
+<div class="note">Con frutillas maceradas en naranja</div>
+<div class="row"><span>Affogato</span><i></i><b>$9.500</b></div>
+<div class="row"><span>Mango matcha latte</span><i></i><b>$8.500</b></div>
+<h4>Otros</h4>
+<div class="row"><span>Chocolatada</span><i></i><b>$4.000</b></div>
+<div class="row"><span>Submarino</span><i></i><b>$5.500</b></div>
+<div class="row"><span>Delhi Tea en saquito</span><i></i><b>$3.700</b></div>
+</div>
+
+<div class="cat sage" style="grid-column:1 / -1">
+<h3>Acompañalo con algo rico</h3>
+<div class="menu" style="gap:8px 40px;grid-template-columns:repeat(2,minmax(0,1fr))">
+<div>
+<h4>Dulce</h4>
+<div class="row"><span>Medialuna</span><i></i><b>$2.200</b></div>
+<div class="row"><span>Roll (canela, manzana)</span><i></i><b>$7.500</b></div>
+<div class="row"><span>Alfajor de maicena</span><i></i><b>$2.500</b></div>
+<div class="row"><span>Alfajor sablé de pistacho</span><i></i><b>$7.000</b></div>
+<div class="row"><span>Alfajor maní y café</span><i></i><b>$5.200</b></div>
+<div class="row"><span>Alfajor marplatense</span><i></i><b>$6.000</b></div>
+<div class="row"><span>Cookie (vainilla, chocolate)</span><i></i><b>$4.500</b></div>
+</div>
+<div>
+<h4>Salado</h4>
+<div class="row"><span>Medialuna JyQ</span><i></i><b>$7.000</b></div>
+<div class="row"><span>Tostado de JyQ</span><i></i><b>$12.000</b></div>
+<div class="note">Pan de masa madre o árabe</div>
+<p class="tip">Consultá variedad sin TACC y kosher.</p>
+</div>
+</div>
+</div>
+
+</div>
+</section>
+
+<section id="galeria">
+<h2>Un vistazo</h2>
+<p class="sub">Café, pastelería y un lugar para quedarse.</p>
+<div class="gal">
+<div><img src="img/maquina-taza.jpg" alt="Espresso cayendo en una taza"></div>
+<div><img src="img/cartel.jpg" alt="Cartel de Romero Café"></div>
+<div><img src="img/matcha-oso.jpg" alt="Matcha latte con arte de osito"></div>
+<div><img src="img/taza-take.jpg" alt="Vaso take away de Romero Café"></div>
+</div>
+</section>
+
+<section id="visitanos">
+<div class="visit">
+<div class="box">
+<div class="eyebrow">VISITANOS</div>
+<div class="big">Av. Boyacá 600</div>
+<p><strong>Horarios:</strong> [COMPLETAR]</p>
+<p><strong>Instagram:</strong> @romerocafe_</p>
+<div class="btns">
+<a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Romero+Caf%C3%A9+Av.+Boyac%C3%A1+600" target="_blank" rel="noopener">Cómo llegar</a>
+<a class="btn alt" href="https://www.instagram.com/romerocafe_/" target="_blank" rel="noopener">Escribinos por Instagram</a>
+</div>
+</div>
+<div class="side"><img src="img/frente-sillas.jpg" alt="Frente de Romero Café"></div>
+</div>
+</section>
+</div>
+
+<footer><div class="wrap">
+<span>Propuesta de diseño de Hyaku para Romero Café · Borrador no oficial.</span>
+<img src="img/hyaku-horizontal-oscuro.svg" alt="Hyaku">
+</div></footer>
+
+</body>
+</html>
