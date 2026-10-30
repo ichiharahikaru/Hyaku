@@ -70,6 +70,35 @@ footer img{height:30px;width:auto}
 @media (max-width:980px){.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.menu{grid-template-columns:repeat(2,minmax(0,1fr))}.gal{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:640px){.cards,.menu{grid-template-columns:minmax(0,1fr)}.mosaic{height:380px}.hero{padding-bottom:52px}}
 .wm{position:fixed;inset:0;z-index:100;pointer-events:none;background-image:url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='380' height='260'%3E%3Ctext x='24' y='150' transform='rotate(-24 190 130)' font-family='Montserrat,Arial,sans-serif' font-size='26' font-weight='700' letter-spacing='3' fill='%231F2835' fill-opacity='0.13'%3EHYAKU %C2%B7 DEMO%3C/text%3E%3C/svg%3E")}
+
+/* profundidad en fotos */
+.mosaic div,.gal div,.visit .side{position:relative;box-shadow:0 22px 40px -18px rgba(30,25,20,.45),0 6px 14px -6px rgba(30,25,20,.25);outline:5px solid #FBF6EA;outline-offset:-5px;transition:transform .35s ease,box-shadow .35s ease}
+.mosaic div::after,.gal div::after,.visit .side::after,.card .ph::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:linear-gradient(160deg,rgba(255,255,255,.14) 0%,rgba(255,255,255,0) 35%,rgba(30,25,20,.14) 100%);box-shadow:inset 0 0 0 5px #FBF6EA}
+.mosaic div,.gal div,.visit .side,.card .ph{outline:none}
+.mosaic div:first-child{box-shadow:14px 14px 0 var(--tan),0 26px 44px -18px rgba(30,25,20,.45)}
+.visit .side{box-shadow:-14px 14px 0 var(--gold),0 26px 44px -18px rgba(30,25,20,.45)}
+.card .ph{position:relative;box-shadow:0 10px 18px -10px rgba(30,25,20,.4)}
+.mosaic img,.gal img,.card .ph img,.visit .side img{transition:transform .6s ease}
+.mosaic div:hover img,.gal div:hover img,.card:hover .ph img,.visit .side:hover img{transform:scale(1.06)}
+.gal div:hover,.mosaic div:nth-child(n):hover{box-shadow:0 30px 50px -18px rgba(30,25,20,.55)}
+.mosaic div:first-child:hover{box-shadow:14px 14px 0 var(--tan),0 30px 50px -18px rgba(30,25,20,.55)}
+@media (max-width:640px){.mosaic div:first-child{box-shadow:8px 8px 0 var(--tan),0 20px 36px -16px rgba(30,25,20,.45)}.visit .side{box-shadow:-8px 8px 0 var(--gold),0 20px 36px -16px rgba(30,25,20,.45)}.mosaic{margin-right:8px}}
+
+/* slider */
+.slider{position:relative}
+.track{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:8px 4px 34px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.track::-webkit-scrollbar{display:none}
+.slide{flex:0 0 clamp(220px,26%,300px);aspect-ratio:3/4;scroll-snap-align:start;border-radius:22px;overflow:hidden;position:relative;background:var(--sage);box-shadow:0 22px 40px -18px rgba(30,25,20,.45),0 6px 14px -6px rgba(30,25,20,.25)}
+.slide::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:linear-gradient(160deg,rgba(255,255,255,.14),rgba(255,255,255,0) 35%,rgba(30,25,20,.14));box-shadow:inset 0 0 0 5px #FBF6EA}
+.slide img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.slide:hover img{transform:scale(1.06)}
+.nav-btn{position:absolute;top:calc(50% - 25px);width:46px;height:46px;border-radius:50%;border:0;background:#FBF6EA;color:var(--green);font-size:28px;line-height:1;cursor:pointer;box-shadow:0 8px 18px -6px rgba(30,25,20,.5);display:flex;align-items:center;justify-content:center}
+.nav-btn:hover{background:var(--green);color:#fff}
+.prev{left:-12px}.next{right:-12px}
+.dots{display:flex;justify-content:center;gap:8px;margin-top:-6px}
+.dots i{width:8px;height:8px;border-radius:99px;background:#CDBF9F;transition:all .3s}
+.dots i.on{width:26px;background:var(--green)}
+@media (max-width:640px){.slide{flex-basis:72%}.prev{left:2px}.next{right:2px}}
 </style>
 </head>
 <body>
@@ -202,12 +231,20 @@ footer img{height:30px;width:auto}
 <section id="galeria">
 <h2>Un vistazo</h2>
 <p class="sub">Café, pastelería y un lugar para quedarse.</p>
-<div class="gal">
-<div><img src="img/maquina-taza.jpg" alt="Espresso cayendo en una taza"></div>
-<div><img src="img/cartel.jpg" alt="Cartel de Romero Café"></div>
-<div><img src="img/matcha-oso.jpg" alt="Matcha latte con arte de osito"></div>
-<div><img src="img/taza-take.jpg" alt="Vaso take away de Romero Café"></div>
+<div class="slider" id="slider">
+<div class="track" id="track">
+<div class="slide"><img src="img/maquina-taza.jpg" alt="Espresso cayendo en una taza" loading="lazy"></div>
+<div class="slide"><img src="img/cartel.jpg" alt="Cartel de Romero Café" loading="lazy"></div>
+<div class="slide"><img src="img/matcha-oso.jpg" alt="Matcha latte con arte de osito" loading="lazy"></div>
+<div class="slide"><img src="img/taza-take.jpg" alt="Vaso take away de Romero Café" loading="lazy"></div>
+<div class="slide"><img src="img/frente-planta.jpg" alt="Entrada del local" loading="lazy"></div>
+<div class="slide"><img src="img/vitrina.jpg" alt="Vitrina con cookies y pastelería" loading="lazy"></div>
+<div class="slide"><img src="img/latte-vertido.jpg" alt="Barista vertiendo leche en un latte" loading="lazy"></div>
 </div>
+<button class="nav-btn prev" id="prev" aria-label="Anterior">&#8249;</button>
+<button class="nav-btn next" id="next" aria-label="Siguiente">&#8250;</button>
+</div>
+<div class="dots" id="dots" aria-hidden="true"></div>
 </section>
 
 <section id="visitanos">
@@ -232,5 +269,23 @@ footer img{height:30px;width:auto}
 <img src="img/hyaku-horizontal-oscuro.svg" alt="Hyaku">
 </div></footer>
 
+<script>
+(function(){
+var t=document.getElementById("track"),sl=t.children,dots=document.getElementById("dots"),paused=false;
+for(var i=0;i<sl.length;i++){dots.appendChild(document.createElement("i"))}
+function step(){return sl[0].getBoundingClientRect().width+18}
+function idx(){return Math.round(t.scrollLeft/step())}
+function mark(){var k=Math.min(idx(),sl.length-1);for(var i=0;i<dots.children.length;i++)dots.children[i].className=i===k?"on":""}
+function go(d){var max=t.scrollWidth-t.clientWidth;var n=t.scrollLeft+d*step();if(n>max+4)n=0;if(n<-4)n=max;t.scrollTo({left:n,behavior:"smooth"})}
+document.getElementById("prev").onclick=function(){go(-1)};
+document.getElementById("next").onclick=function(){go(1)};
+t.addEventListener("scroll",mark,{passive:true});
+var box=document.getElementById("slider");
+box.addEventListener("mouseenter",function(){paused=true});box.addEventListener("mouseleave",function(){paused=false});
+box.addEventListener("touchstart",function(){paused=true},{passive:true});
+setInterval(function(){if(!paused&&!document.hidden)go(1)},3200);
+mark();
+})();
+</script>
 </body>
 </html>
